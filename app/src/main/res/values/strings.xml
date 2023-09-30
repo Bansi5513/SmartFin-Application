@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SmartFin</string>
+    <string name="textview">TextView</string>
+    <string name="Titletextview">TextView</string>
 </resources>

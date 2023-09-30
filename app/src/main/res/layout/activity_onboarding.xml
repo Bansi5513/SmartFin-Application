@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".OnboardingActivity">
+
+    <ImageButton
+        android:id="@+id/nextArrowButton"
+        android:layout_width="47dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/arrow_right_3" />
+
+    <TextView
+        android:id="@+id/scrollRightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/cabin"
+        android:letterSpacing="0.3"
+        android:text="SCROLL RIGHT"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#373737"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/getStartedButton"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/screen_viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="68dp"
+        android:contentDescription="@string/Titletextview"
+        app:layout_constraintBottom_toTopOf="@+id/scrollRightText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="102dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="293dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smartfin_logo" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/indicator"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+
+        android:layout_marginBottom="-2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screen_viewPager"
+        app:layout_constraintVertical_bias="0.78"
+        app:tabBackground="@drawable/indicator_selector"
+        app:tabIndicatorHeight="0dp"
+        app:tabMaxWidth="15dp">
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <Button
+        android:id="@+id/skipButton"
+        android:layout_width="70dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/cabin"
+        android:letterSpacing="0.3"
+        android:paddingHorizontal="0dp"
+        android:paddingTop="2dp"
+        android:text="SKIP"
+        android:textColor="#373737"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="132dp"
+        android:layout_height="73dp"
+        android:background="@drawable/button_gradient_style"
+        android:backgroundTint="#008EFF"
+        android:fontFamily="@font/cabin"
+        android:letterSpacing="0.3"
+        android:text="GET STARTED"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_end="36dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--    <com.airbnb.lottie.LottieAnimationView-->
+    <!--        android:id="@+id/animationView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:lottie_autoPlay="true"-->
+    <!--        app:lottie_loop="true"-->
+    <!--        app:lottie_rawRes="@raw/smart_expense_categorization" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
