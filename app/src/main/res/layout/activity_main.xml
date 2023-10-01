@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginBottom="73dp"
+        android:backgroundTint="#FFC107"
         android:text="Hello"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/button" />
