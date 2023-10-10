@@ -3,4 +3,7 @@
     <string name="textview">TextView</string>
     <string name="Titletextview">TextView</string>
     <string name="image">Image</string>
+
+    //google signin
+    <string name="web_client_id">520354677604-qmh7ebhedu9a3joq4ehbtvrq7te43qfl.apps.googleusercontent.com</string>
 </resources>

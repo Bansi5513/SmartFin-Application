@@ -1,19 +1,12 @@
 package com.example.smartfin;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -54,7 +47,7 @@ public class OnboardingActivity extends AppCompatActivity {
         // ...... we need to do this checking also in LOGIN/SIGNUP screen ......
         if(restorePrefData()){
 
-            Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
+            Intent mainActivity = new Intent(getApplicationContext(), GetStartedActivity.class);
             startActivity(mainActivity);
             finish();
 
@@ -175,7 +168,7 @@ public class OnboardingActivity extends AppCompatActivity {
 
 
                 // open main activity(currently) ...... open signup/login page (TO DO) ... BANSU CHANGE HERE and delete this bansu part in comment
-                Intent mainActivity = new Intent(getApplicationContext(),MainActivity.class);
+                Intent mainActivity = new Intent(getApplicationContext(), GetStartedActivity.class);
                 startActivity(mainActivity);
 
                 // Bansu do this also in SINGUP/LOGIN PAGE

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "417245732091",
+    "project_id": "smartfin-application",
+    "storage_bucket": "smartfin-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417245732091:android:11d1eb39311385a5e7a45e",
+        "android_client_info": {
+          "package_name": "com.example.smartfin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9RdtlqBujfCCg3P4rbthpaHIS8gX5Wd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
