@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -29,8 +33,10 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText Email, Password;
     TextView signup, forgot_pass;
+    TextInputLayout PasswordLayout;
     Button LoginButton;
     FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         Password = findViewById(R.id.Password);
         LoginButton = findViewById(R.id.LoginButton);
         forgot_pass = findViewById(R.id.forgot_pass);
+        PasswordLayout = findViewById(R.id.PasswordLayout);
 
         signup = findViewById(R.id.signup);
 
@@ -77,10 +84,14 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (password.isEmpty()) {
                     Password.setError("Password is required");
+                    PasswordLayout.setEndIconVisible(false);
                     hasError = true;
                 }else if (password.length() < 6) {
                     Password.setError("Password must be at least 6 characters");
+                    PasswordLayout.setEndIconVisible(false);
                     hasError = true;
+                }else{
+                    PasswordLayout.setEndIconVisible(true);
                 }
 
                 if (hasError) {
@@ -93,6 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                                     FirebaseUser user = firebaseAuth.getCurrentUser();
                                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                    updateLoggedInStatus(true);
+
                                     startActivity(intent);
                                     finish();
                                 } else {
@@ -156,6 +169,13 @@ public class LoginActivity extends AppCompatActivity {
     private boolean isValidEmail(String email) {
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
         return email.matches(regex) && (email.endsWith(".com") || email.endsWith(".in"));
+    }
+
+    private void updateLoggedInStatus(boolean loggedIn) {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("hasLoggedIn", loggedIn);
+        editor.apply();
     }
 
 }

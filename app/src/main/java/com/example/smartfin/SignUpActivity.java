@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,6 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     EditText Name, Email, Password, ConfirmPassword;
     TextView login;
+    TextInputLayout PasswordLayout, ConfirmPasswordLayout;
     Button SignupButton;
     FirebaseAuth firebaseAuth;
     FirebaseDatabase database;
@@ -61,6 +64,8 @@ public class SignUpActivity extends AppCompatActivity {
         Password = findViewById(R.id.Password);
         ConfirmPassword = findViewById(R.id.ConfirmPassword);
         SignupButton = findViewById(R.id.SignupButton);
+        PasswordLayout = findViewById(R.id.PasswordLayout);
+        ConfirmPasswordLayout = findViewById(R.id.ConfirmPasswordLayout);
 
         login = findViewById(R.id.login);
 
@@ -161,18 +166,26 @@ public class SignUpActivity extends AppCompatActivity {
 
                 if (password.isEmpty()) {
                     Password.setError("Password is required");
+                    PasswordLayout.setEndIconVisible(false);
                     hasError = true;
                 }else if (password.length() < 6) {
                     Password.setError("Password must be at least 6 characters");
+                    PasswordLayout.setEndIconVisible(false);
                     hasError = true;
+                }else {
+                    PasswordLayout.setEndIconVisible(true);
                 }
 
                 if (confirmPassword.isEmpty()) {
                     ConfirmPassword.setError("Confirm Password is required");
+                    ConfirmPasswordLayout.setEndIconVisible(false);
                     hasError = true;
                 }else if (confirmPassword.length() < 6) {
                     ConfirmPassword.setError("Password must be at least 6 characters");
+                    ConfirmPasswordLayout.setEndIconVisible(false);
                     hasError = true;
+                }else {
+                    ConfirmPasswordLayout.setEndIconVisible(true);
                 }
 
                 if (!password.equals(confirmPassword)) {
@@ -197,6 +210,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                                         Toast.makeText(SignUpActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                                        updateLoggedInStatus(true);
+
                                         startActivity(intent);
                                         finish();
                                     } else {
@@ -213,6 +228,13 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean isValidEmail(String email) {
         String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
         return email.matches(regex) && (email.endsWith(".com") || email.endsWith(".in"));
+    }
+
+    private void updateLoggedInStatus(boolean loggedIn) {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean("hasLoggedIn", loggedIn);
+        editor.apply();
     }
 
 }
