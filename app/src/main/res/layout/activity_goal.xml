@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GoalActivity">
+
+
+    <ImageView
+        android:id="@+id/top_bg"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/home_screen_top_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/scrnTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="GOALS"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/bottom_bg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/home_screen_bottom_bg" />
+
+    <LinearLayout
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="horizontal"
+        android:paddingBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/budgetIcon"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/budget_icon_9"
+            app:tint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/expenseIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/expense_icon_1"
+            app:tint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/homeIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/home_icon_4"
+            app:tint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/goalIcon"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/goal_icon_3"
+            app:tint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/insightIcon"
+            android:layout_width="35dp"
+            android:layout_height="30dp"
+            android:layout_weight="0.5"
+            app:srcCompat="@drawable/insight_icon_4"
+            app:tint="#FFFFFF" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/goal_name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Your goal's name"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bg" />
+
+    <Button
+        android:id="@+id/create_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_get_started"
+        android:paddingHorizontal="20dp"
+        android:text="Create Goal"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goal_name" />
+
+    <Button
+        android:id="@+id/goal1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="70dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/goal3"
+        app:layout_constraintEnd_toStartOf="@+id/goal2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_goal">
+
+    </Button>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_goals"
+        android:backgroundTint="#7752FE"
+        android:src="@drawable/house"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/goal1"
+        app:layout_constraintEnd_toEndOf="@+id/goal1"
+        app:layout_constraintStart_toStartOf="@+id/goal1"
+        app:layout_constraintTop_toTopOf="@+id/goal1"
+        app:tint="@color/white" />
+
+    <Button
+        android:id="@+id/goal2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goal1"
+        app:layout_constraintTop_toBottomOf="@+id/create_goal" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_goals"
+        android:backgroundTint="#FF9130"
+        android:padding="10dp"
+        android:src="@drawable/car"
+        app:layout_constraintEnd_toEndOf="@+id/goal2"
+        app:layout_constraintTop_toTopOf="@+id/goal2"
+        app:tint="@color/white"/>
+
+    <Button
+        android:id="@+id/goal3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="70dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@+id/goal2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goal1" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_goals"
+        android:padding="10dp"
+        android:backgroundTint="#004225"
+        android:src="@drawable/education"
+        app:layout_constraintBottom_toTopOf="@+id/textViewgoal3"
+        app:layout_constraintEnd_toEndOf="@+id/goal3"
+        app:layout_constraintTop_toTopOf="@+id/goal3"
+        app:layout_constraintVertical_bias="0.0"
+        app:tint="@color/white"/>
+
+    <Button
+        android:id="@+id/goal4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.759"
+        app:layout_constraintStart_toEndOf="@+id/goal1"
+        app:layout_constraintTop_toBottomOf="@+id/goal2"
+        />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/button_goals"
+        android:padding="10dp"
+        android:backgroundTint="#F11A7B"
+        android:src="@drawable/health_care"
+        app:layout_constraintEnd_toEndOf="@+id/goal4"
+        app:layout_constraintTop_toTopOf="@+id/goal4"
+        app:tint="@color/white"/>
+
+    <TextView
+        android:id="@+id/textViewgoal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="New House"
+        app:layout_constraintEnd_toEndOf="@+id/goal1"
+        app:layout_constraintStart_toStartOf="@+id/goal1"
+        app:layout_constraintTop_toBottomOf="@+id/goal1" />
+
+    <TextView
+        android:id="@+id/textViewgoal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="New Car"
+        app:layout_constraintEnd_toEndOf="@+id/goal2"
+        app:layout_constraintStart_toStartOf="@+id/goal2"
+        app:layout_constraintTop_toBottomOf="@+id/goal2" />
+
+    <TextView
+        android:id="@+id/textViewgoal3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Education"
+        app:layout_constraintEnd_toEndOf="@+id/goal3"
+        app:layout_constraintStart_toStartOf="@+id/goal3"
+        app:layout_constraintTop_toBottomOf="@+id/goal3" />
+
+    <TextView
+        android:id="@+id/textViewgoal4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Health Care"
+        app:layout_constraintEnd_toEndOf="@+id/goal4"
+        app:layout_constraintStart_toStartOf="@+id/goal4"
+        app:layout_constraintTop_toBottomOf="@+id/goal4" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

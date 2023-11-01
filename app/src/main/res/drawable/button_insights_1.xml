@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Button pressed (clicked) state -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <solid android:color="#7743DB" /> <!-- Change the color to your desired pressed state color -->
+        </shape>
+    </item>
+<!--    &lt;!&ndash; Button focused (hovered) state &ndash;&gt;-->
+<!--    <item android:state_focused="true">-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <corners android:radius="100dp" />-->
+<!--            <solid android:color="#00A9FF" /> &lt;!&ndash; Change the color to your desired focused state color &ndash;&gt;-->
+<!--        </shape>-->
+<!--    </item>-->
+    <!-- Default button state -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <solid android:color="#d3d3d3" /> <!-- Change the color to your desired normal state color -->
+        </shape>
+    </item>
+</selector>

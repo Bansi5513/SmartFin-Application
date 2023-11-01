@@ -89,25 +89,25 @@ public class MainActivity extends AppCompatActivity {
         homeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         goalIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Goal", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MainActivity.this, GoalActivity.class);
-//                startActivity(intent);
+//                Toast.makeText(MainActivity.this, "Goal", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, GoalActivity.class);
+                startActivity(intent);
             }
         });
         insightIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Insight", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(MainActivity.this, InsightActivity.class);
-//                startActivity(intent);
+//                Toast.makeText(MainActivity.this, "Insight", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, InsightActivity.class);
+                startActivity(intent);
             }
         });
         //-----------------------------------------//
